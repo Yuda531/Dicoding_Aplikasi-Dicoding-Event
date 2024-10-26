@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/eventHomeFragment"
+        android:icon="@drawable/ic_home_24"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/eventFragment"
+        android:icon="@drawable/ic_upcoming_24"
+        android:title="@string/upcoming" />
+    <item
+        android:id="@+id/eventFinishFragment"
+        android:icon="@drawable/ic_finished_24"
+        android:title="@string/finished" />
+    <item
+        android:id="@+id/eventFavoriteFragment"
+        android:icon="@drawable/ic_favorite_24"
+        android:title="@string/favorite" />
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/ic_settings_24"
+        android:title="@string/setting" />
+</menu>

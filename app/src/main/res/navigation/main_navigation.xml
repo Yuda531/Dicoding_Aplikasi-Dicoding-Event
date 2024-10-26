@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/eventHomeFragment">
+
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.event.EventFragment"
+        android:label="Upcoming Dicoding Events">
+        <argument
+            android:name="active"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventFinishFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.event.EventFragment"
+        android:label="Finished Dicoding Events">
+        <argument
+            android:name="active"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_eventFinishFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.event.EventDetailFragment"
+        android:label="Event Detail">
+        <argument
+            android:name="event"
+            app:argType="com.dicoding.aplikasidicodingevent.data.remote.response.ListEventsItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventHomeFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.home.HomeFragment"
+        android:label="Dicoding Events">
+        <action
+            android:id="@+id/action_homeFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventDetailsFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.event.EventDetailFragment"
+        android:label="Event Detail">
+        <argument
+            android:name="eventId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventFavoriteFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.favorite.FavoriteFragment"
+        android:label="Favorite Event"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/actionFavoriteFragmentToEventDetailFragment"
+            app:destination="@id/eventDetailsFragment" >
+            <argument
+                android:name="eventId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.dicoding.aplikasidicodingevent.ui.setting.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+
+</navigation>
